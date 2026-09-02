@@ -1,12 +1,12 @@
 using TMPro;
 using UnityEngine;
 
-public class demo : MonoBehaviour
+public class ButtonClick : MonoBehaviour
 {
 
     public TextMeshProUGUI textbox;
 
-    public void OnClick()
+    public void ButtonClickMethod()
     {
         textbox.text = "i have changed";
     }
