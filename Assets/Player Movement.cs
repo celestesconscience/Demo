@@ -4,6 +4,7 @@ using UnityEngine; //Using Unity's Programming tools
 public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to attach script to a GameObject
 {
     public float speed = 4;
+    
     // Update is called once per frame
     void Update()
     {
@@ -19,21 +20,21 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
             transform.Translate(-transform.up * speed * Time.deltaTime);
         }
 
-        // Traveling left
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(-transform.right * speed * Time.deltaTime);
-        }
+        // // Traveling left
+        // if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     transform.Translate(-transform.right * speed * Time.deltaTime);
+        // }
 
-        // Traveling right
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(transform.right * speed * Time.deltaTime);
-        }
+        // // Traveling right
+        // if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        // {
+        //     transform.Translate(transform.right * speed * Time.deltaTime);
+        // }
 
         // Construct Movement
-        transform.position = new Vector3(transform.position.x, 
-                Mathf.Clamp(transform.position.y, -3.5f, 3.5f),
+        transform.position = new Vector3((transform.position.x), 
+                Mathf.Clamp(transform.position.y, -4f, 4f),
                 transform.position.z);
     
     }

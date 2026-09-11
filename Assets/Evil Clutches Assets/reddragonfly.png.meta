@@ -82,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,7 +120,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -161,12 +161,12 @@ TextureImporter:
       name: reddragonfly_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 520
-        width: 154
-        height: 121
+        x: 0
+        y: 483
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -183,12 +183,12 @@ TextureImporter:
       name: reddragonfly_1
       rect:
         serializedVersion: 2
-        x: 219
-        y: 520
-        width: 155
-        height: 85
+        x: 205
+        y: 483
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -205,12 +205,12 @@ TextureImporter:
       name: reddragonfly_2
       rect:
         serializedVersion: 2
-        x: 426
-        y: 518
-        width: 153
-        height: 83
+        x: 410
+        y: 483
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,12 +227,12 @@ TextureImporter:
       name: reddragonfly_3
       rect:
         serializedVersion: 2
-        x: 630
-        y: 517
-        width: 153
-        height: 81
+        x: 615
+        y: 483
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -249,12 +249,12 @@ TextureImporter:
       name: reddragonfly_4
       rect:
         serializedVersion: 2
-        x: 26
-        y: 348
-        width: 141
-        height: 88
+        x: 0
+        y: 322
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -271,12 +271,12 @@ TextureImporter:
       name: reddragonfly_5
       rect:
         serializedVersion: 2
-        x: 223
-        y: 355
-        width: 149
-        height: 80
+        x: 205
+        y: 322
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,12 +293,12 @@ TextureImporter:
       name: reddragonfly_6
       rect:
         serializedVersion: 2
-        x: 424
-        y: 357
-        width: 154
-        height: 83
+        x: 410
+        y: 322
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: reddragonfly_7
       rect:
         serializedVersion: 2
-        x: 628
-        y: 359
-        width: 156
-        height: 85
+        x: 615
+        y: 322
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -337,12 +337,12 @@ TextureImporter:
       name: reddragonfly_8
       rect:
         serializedVersion: 2
-        x: 16
-        y: 197
-        width: 155
-        height: 122
+        x: 0
+        y: 161
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -359,12 +359,12 @@ TextureImporter:
       name: reddragonfly_9
       rect:
         serializedVersion: 2
-        x: 219
-        y: 198
-        width: 155
-        height: 85
+        x: 205
+        y: 161
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -381,12 +381,12 @@ TextureImporter:
       name: reddragonfly_10
       rect:
         serializedVersion: 2
-        x: 426
-        y: 196
-        width: 153
-        height: 83
+        x: 410
+        y: 161
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -403,12 +403,12 @@ TextureImporter:
       name: reddragonfly_11
       rect:
         serializedVersion: 2
-        x: 630
-        y: 195
-        width: 157
-        height: 81
+        x: 615
+        y: 161
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -425,12 +425,12 @@ TextureImporter:
       name: reddragonfly_12
       rect:
         serializedVersion: 2
-        x: 26
-        y: 26
-        width: 147
-        height: 86
+        x: 0
+        y: 0
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -447,12 +447,12 @@ TextureImporter:
       name: reddragonfly_13
       rect:
         serializedVersion: 2
-        x: 223
-        y: 33
-        width: 153
-        height: 80
+        x: 205
+        y: 0
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -469,12 +469,12 @@ TextureImporter:
       name: reddragonfly_14
       rect:
         serializedVersion: 2
-        x: 424
-        y: 35
-        width: 154
-        height: 83
+        x: 410
+        y: 0
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -491,12 +491,12 @@ TextureImporter:
       name: reddragonfly_15
       rect:
         serializedVersion: 2
-        x: 628
-        y: 37
-        width: 156
-        height: 85
+        x: 615
+        y: 0
+        width: 205
+        height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -513,7 +513,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ea88f6349ae6a4fe4af379abd4bf8ff4
     internalID: 0
     vertices: []
     indices: 
@@ -521,7 +521,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":205.0,"y":161.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       reddragonfly_0: 2237450425591679811
       reddragonfly_1: -7549528138863349154
