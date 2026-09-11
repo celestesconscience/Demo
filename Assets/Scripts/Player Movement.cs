@@ -21,21 +21,22 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
         }
 
         // // Traveling left
-        // if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        // {
-        //     transform.Translate(-transform.right * speed * Time.deltaTime);
-        // }
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(-transform.right * speed * Time.deltaTime);
+        }
 
         // // Traveling right
-        // if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        // {
-        //     transform.Translate(transform.right * speed * Time.deltaTime);
-        // }
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(transform.right * speed * Time.deltaTime);
+        }
 
         // Construct Movement
-        transform.position = new Vector3((transform.position.x), 
-                Mathf.Clamp(transform.position.y, -4f, 4f),
-                transform.position.z);
-    
+        transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, -8f, -4f), // <-- Stop left and right
+                Mathf.Clamp(transform.position.y, -4f, 4f), // <-- Stop up and down
+                transform.position.z
+                );
     }
 }

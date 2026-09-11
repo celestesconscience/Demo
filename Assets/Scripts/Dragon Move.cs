@@ -12,11 +12,14 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
     {
         transform.Translate(transform.up * speed * Time.deltaTime);
 
+        // Stop from going off screen Up
         if(transform.position.y > 4 && goingUp == true)
         {
             goingUp = false;
             speed *= -1;
         }
+
+        // Stop from going off screen Down
        if(transform.position.y < -4 && goingUp == false)
         {
             goingUp = true;
