@@ -4,6 +4,7 @@ using UnityEngine; //Using Unity's Programming tools
 public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to attach script to a GameObject
 {
     public float speed = 4;
+    public int score = 0;
     
     // Update is called once per frame
     void Update()
@@ -38,5 +39,19 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
                 Mathf.Clamp(transform.position.y, -4f, 4f), // <-- Stop up and down
                 transform.position.z
                 );
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Projectile")
+        {
+            if (collision.gameObject.GetComponent<ProjectileMove>() != null)
+            {
+                score += collision.gameObject.GetComponent<ProjectileMove>().points;
+                print(score);
+            }
+        }
+
+        Destroy(collision.gameObject);
     }
 }
