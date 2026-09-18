@@ -1,10 +1,12 @@
 using UnityEngine; //Using Unity's Programming tools
+using TMPro; //Pulling from TextMesh Pro library
 
 //PlayerMovement Class and Functions
 public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to attach script to a GameObject
 {
     public float speed = 4;
-    public int score = 0;
+    public int scoreVal = 0;
+    public TextMeshProUGUI scoreBox;
     
     // Update is called once per frame
     void Update()
@@ -43,15 +45,15 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Projectile")
-        {
-            if (collision.gameObject.GetComponent<ProjectileMove>() != null)
+        if(collision.gameObject.CompareTag("Projectile"))
+        {      
+            if(collision.gameObject.GetComponent<ProjectileMove>() != null)
             {
-                score += collision.gameObject.GetComponent<ProjectileMove>().points;
-                print(score);
+                scoreVal += collision.gameObject.GetComponent<ProjectileMove>().points;
+                scoreBox.text = "Score: " + scoreVal;
+                print(scoreVal);
             }
         }
-
         Destroy(collision.gameObject);
     }
 }

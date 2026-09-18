@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -514897458147918216}
   m_Layer: 0
   m_Name: Fireball
-  m_TagString: 'Projectile '
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileMove
   speed: 6
-  points: 100
+  points: -100
 --- !u!61 &4554083080396231711
 BoxCollider2D:
   m_ObjectHideFlags: 0
