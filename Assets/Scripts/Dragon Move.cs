@@ -4,15 +4,18 @@ using UnityEngine;
 public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to attach script to a GameObject. 
                                        // class acts as a container for the code that will control the dragon's movement and behavior
 {
+    // Variables
     public float speed = 5; // <-- Speed of the dragon's movement
     public bool goingUp = true; // <-- Direction of the dragon's movement
+    private int dragonHealth = 100;
 
+    // Timer Variables
     private float ratTimer = 0; // <-- Timer for spawning rats
     private float fireballTimer = 0; // <-- Timer for spawning fireballs
-
     private float ratWaitTime = 3; // <-- Time interval for spawning rats
     private float fireballWaitTime = 5; // <-- Time interval for spawning fireballs
 
+    // Prefabs
     public GameObject ratPrefab; // <-- Prefab for the rat GameObject
     public GameObject fireballPrefab; // <-- Prefab for the fireball GameObject
 
@@ -53,6 +56,20 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
         {
             goingUp = true;
             speed *= -1;
+        }
+    }
+
+    // Function to handle damage taken by the dragon
+    private void OnTriggerEnter2D(Collider2D collision) // <-- Function that is called when the player collides with another object
+    {
+        if(collision.gameObject.CompareTag("PlayerProjectile")) // <-- Check if the collided object has the tag "PlayerProjectile"
+        {      
+            if(collision.gameObject.GetComponent<BatSpitMove>() != null) // <-- Check if the collided object has a BatSpitMove component
+            {
+                print("Spit has hit the dragon!"); // <-- Print a message to the console for debugging purposes
+
+                Destroy(collision.gameObject); // <-- Destroy the collided object (the bat spit projectile) after it has been processed
+            }
         }
     }
 }

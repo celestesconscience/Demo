@@ -72,8 +72,9 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
                 scoreVal += collision.gameObject.GetComponent<ProjectileMove>().points; // <-- Add the points from the projectile to the player's score
                 scoreBox.text = "Score: " + scoreVal; // <-- Update the score display with the new score
                 print(scoreVal); // <-- Print the new score to the console for debugging purposes
+                
+                Destroy(collision.gameObject); // <-- Destroy the collided object (the projectile) after it has been processed
             }
         }
-        Destroy(collision.gameObject); // <-- Destroy the collided object (the projectile) after it has been processed
     }
 }
