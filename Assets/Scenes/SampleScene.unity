@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 928964665}
   - component: {fileID: 928964664}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DragonMove
   speed: 5
   goingUp: 1
-  dragonHealth: 10
+  dragonHealth: 100
   healthBar: {fileID: 1254285137}
   youWin: {fileID: 530907592}
   ratPrefab: {fileID: 2354467190462426102, guid: f248d1644456240df9aa53cfd058fc86, type: 3}
