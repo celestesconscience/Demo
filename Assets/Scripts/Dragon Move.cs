@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 //DragonMove Class and Functions
 public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to attach script to a GameObject. 
@@ -7,7 +9,9 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
     // Variables
     public float speed = 5; // <-- Speed of the dragon's movement
     public bool goingUp = true; // <-- Direction of the dragon's movement
-    private int dragonHealth = 100;
+    public int dragonHealth = 100; // <-- Health variable for dragon
+    public Slider healthBar; // <-- Brings health bar asset
+    public TextMeshProUGUI youWin; // <-- Brings 'you win' text object
 
     // Timer Variables
     private float ratTimer = 0; // <-- Timer for spawning rats
@@ -19,10 +23,16 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
     public GameObject ratPrefab; // <-- Prefab for the rat GameObject
     public GameObject fireballPrefab; // <-- Prefab for the fireball GameObject
 
+    // Start is called when game starts
+    void Start()
+    {
+        healthBar.value = dragonHealth;
+        youWin.enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-
         //Spawning Rat & Fireball
         ratTimer += Time.deltaTime; // <-- Increment the rat timer by the time elapsed since the last frame
         fireballTimer += Time.deltaTime; // <-- Increment the fireball timer by the time elapsed since the last frame
@@ -66,10 +76,16 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
         {      
             if(collision.gameObject.GetComponent<BatSpitMove>() != null) // <-- Check if the collided object has a BatSpitMove component
             {
-                print("Spit has hit the dragon!"); // <-- Print a message to the console for debugging purposes
-
+                dragonHealth -= collision.gameObject.GetComponent<BatSpitMove>().damage; // <-- Subtract the damage dealt by the bat spit projectile from the dragon's health
+                healthBar.value = dragonHealth; // <-- Attaches the dragon health variable to the health bar
                 Destroy(collision.gameObject); // <-- Destroy the collided object (the bat spit projectile) after it has been processed
             }
         }
+    // When dragon health is 0, dragon disappears and you win shows
+        if(dragonHealth <= 0)
+        {
+            youWin.enabled = true;
+            Destroy(gameObject,.1f); // <-- Destroy the dragon GameObject if its health has reached 0
+        }
     }
-}
+}  

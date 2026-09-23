@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
 
     // Bat Spit Projectile
     public GameObject batspitPrefab; // <-- Reference to the batspit GameObject prefab
-    private float batspitCooldown = 1.5f; // <-- Timer for controlling the rate of fire for the bat spit projectile, 
+    private float batspitCooldown = 0.5f; // <-- Timer for controlling the rate of fire for the bat spit projectile, 
                                          // starts at 1.5 second so the player can'tfire immediately at the start of the game
 
     // Update is called once per frame

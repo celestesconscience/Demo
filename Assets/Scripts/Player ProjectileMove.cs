@@ -4,6 +4,7 @@ public class BatSpitMove : MonoBehaviour // <-- MonoBehaviour allows Unity to at
 {
 
     public float speed = 6; // <-- Speed of the projectile's movement
+    public int damage = 10; // <-- Damage dealt by the projectile
 
     // Update is called once per frame
     void Update()
