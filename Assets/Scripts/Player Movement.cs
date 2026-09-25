@@ -1,17 +1,34 @@
 using UnityEngine; //Using Unity's Programming tools
-using TMPro; //Pulling from TextMesh Pro library
+using TMPro;
 
 //PlayerMovement Class and Functions
 public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to attach script to a GameObject
 {
+    // Variables
     public float speed = 4; // <-- Speed of the player's movement
     public int scoreVal = 0; // <-- Player's score
+    private float scoreChangeTimer = 0;
+    public DragonMove dragon;
+
+    // Import Text and Sound
     public TextMeshProUGUI scoreBox; // <-- Reference to the score display UI element
+    public TextMeshProUGUI scoreChange; // <-- Shows score points added or lost
+    public TextMeshProUGUI youLose; // <-- Brings 'you lose' text object
+    public AudioSource loseSound; // <-- Audio source for the lose sound
+    public AudioSource bgMusic; 
 
     // Bat Spit Projectile
     public GameObject batspitPrefab; // <-- Reference to the batspit GameObject prefab
     private float batspitCooldown = 0.5f; // <-- Timer for controlling the rate of fire for the bat spit projectile, 
                                          // starts at 1.5 second so the player can'tfire immediately at the start of the game
+
+    // Start is called when game starts
+    void Start()
+    {
+        youLose.enabled = false;
+        scoreBox.text = "Score: " + scoreVal; // <-- Makes sure when game start, score text is matching score value
+        scoreChange.text = "";
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +37,18 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
         if(batspitCooldown > 0)
         {
             batspitCooldown -= Time.deltaTime;
+        }
+
+        // Update score change timer
+        if(scoreChangeTimer > 0)
+        {
+            scoreChangeTimer -= Time.deltaTime;
+        }
+
+        // Clear Placeholder Score Change text at start
+        if (scoreChangeTimer <= 0)
+        {
+            scoreChange.text = "";
         }
 
         // Attack Projectile
@@ -72,9 +101,30 @@ public class PlayerMovement : MonoBehaviour // <-- MonoBehaviour allows Unity to
                 scoreVal += collision.gameObject.GetComponent<ProjectileMove>().points; // <-- Add the points from the projectile to the player's score
                 scoreBox.text = "Score: " + scoreVal; // <-- Update the score display with the new score
                 print(scoreVal); // <-- Print the new score to the console for debugging purposes
-                
+
+                if(collision.gameObject.GetComponent<ProjectileMove>().points >= 0)
+                {
+                    scoreChange.text = "+" + collision.gameObject.GetComponent<ProjectileMove>().points;
+                }                
+                else
+                {
+                    scoreChange.text = "" + collision.gameObject.GetComponent<ProjectileMove>().points;
+                }
+
+                scoreChangeTimer = 1.0f; // <-- Reset the score change timer to 1 seconds
+
                 Destroy(collision.gameObject); // <-- Destroy the collided object (the projectile) after it has been processed
             }
-        }
+
+            // When player score is 0, lose stuff happens
+            if(scoreVal <= 0)
+            {
+                youLose.enabled = true; // <-- Show 'You Lose' text
+                bgMusic.Stop();  // <-- Stop the background music when the player loses
+                loseSound.Play(); // <-- Play sound
+                dragon.enabled = false; // <-- Dragon Move script stops, dragon stops shooting
+                Destroy(gameObject,.1f); // <-- Destroy the Player 
+            }
+        } 
     }
-}
+}  

@@ -10,8 +10,13 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
     public float speed = 5; // <-- Speed of the dragon's movement
     public bool goingUp = true; // <-- Direction of the dragon's movement
     public int dragonHealth = 100; // <-- Health variable for dragon
+    public PlayerMovement player; // <-- Reference to the Player's PlayerMovement component, assigned in the Unity Inspector
+
+    // Import Text and Sound and UI
     public Slider healthBar; // <-- Brings health bar asset
     public TextMeshProUGUI youWin; // <-- Brings 'you win' text object
+    public AudioSource winSound; // <-- Audio source for the win sound
+    public AudioSource bgMusic;
 
     // Timer Variables
     private float ratTimer = 0; // <-- Timer for spawning rats
@@ -81,11 +86,14 @@ public class DragonMove : MonoBehaviour // <-- MonoBehaviour allows Unity to att
                 Destroy(collision.gameObject); // <-- Destroy the collided object (the bat spit projectile) after it has been processed
             }
         }
-    // When dragon health is 0, dragon disappears and you win shows
+    // When dragon health is 0, win stuff happens
         if(dragonHealth <= 0)
         {
-            youWin.enabled = true;
-            Destroy(gameObject,.1f); // <-- Destroy the dragon GameObject if its health has reached 0
+            youWin.enabled = true;// <-- Show 'You Win' text
+            bgMusic.Stop(); // <-- Stop the background music when the dragon is defeated
+            winSound.Play(); // <-- Play sound
+            player.enabled = false; // <-- Disable the PlayerMovement script so the player can no longer move or shoot
+            Destroy(gameObject,.1f); // <-- Destroy the Dragon 
         }
     }
 }  
